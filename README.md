@@ -140,7 +140,8 @@ O UrbSync foi projetado para ser **Client-Side Only**.
 ---
 
 **Documentação atualizada em:** Fevereiro de 2026
-**Responsável:** [Victor Kiss](www.linkedin.com/in/victor-kiss) (Desenvolvedor Front-end / SMUL)
+**Responsável:** [Victor Kiss](https://www.linkedin.com/in/victor-kiss) (Desenvolvedor Front-end / SMUL)
 
 
 ---
+
