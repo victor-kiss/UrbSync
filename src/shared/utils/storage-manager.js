@@ -68,5 +68,6 @@ export async function getData() {
  */
 export async function clearData() {
     await chrome.storage.local.remove([STORAGE_KEY]);
-    console.log("[UrbSync - Storage] 🧹 Banco de dados limpo.");
+    console.log("[UrbSync - Storage] Banco de dados limpo.");
+
 }
