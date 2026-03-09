@@ -19,6 +19,7 @@ export class SeiScraper extends BaseScraper {
         super('SEI');
         /** @type {Object} Seletores CSS definidos em shared/constants/scraper.js */
         this.targets = scraperTargets.sei;
+        this.parent = scraperTargets.sei.parent
     }
 
     /**
@@ -51,11 +52,13 @@ export class SeiScraper extends BaseScraper {
      * @returns {Array<Object>} Lista de processos extraídos e formatados para o Excel.
      */
     extract() {
+
+        const {tecnico,processo,requerimento,requerente} = this.targets
         // Registra o início da operação (Log herdado da BaseScraper)
         this.logStart(); 
 
         /** @type {NodeListOf<HTMLElement>} Seleciona todas as linhas candidatas na tabela */
-        const rows = document.querySelectorAll(this.targets.parent);
+        const rows = document.querySelectorAll(this.parent);
 
         /**
          * Processamento da lista de elementos.
@@ -68,10 +71,10 @@ export class SeiScraper extends BaseScraper {
         }).map(row => ({
                 sistema: "SEI", 
                 // Remove o prefixo padrão do SEI para deixar apenas o nome do servidor
-                tecnico: this.#getTechniciansName(row, this.targets.tecnico).replace('Atribuído para', '').trim(),
-                processo: this.getText(row, this.targets.processo),
-                requerimento: this.getText(row, this.targets.requerimento),
-                requerente: this.getText(row, this.targets.requerente),
+                tecnico: this.#getTechniciansName(row, tecnico).replace('Atribuído para', '').trim(),
+                processo: this.getText(row, processo),
+                requerimento: this.getText(row, requerimento),
+                requerente: this.getText(row, requerente),
                 data_consulta: new Date().toLocaleDateString('pt-BR'),
         }));
     }
