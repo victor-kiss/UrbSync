@@ -45,7 +45,7 @@ export async function saveData(newItens) {
     // Persiste a lista atualizada no armazenamento local do navegador
     await chrome.storage.local.set({ [STORAGE_KEY]: updatedData });
     
-    console.log(`[UrbSync - Storage] 💾 Salvo! +${newData.length} novos. Total: ${updatedData.length}`);
+    console.log(`[UrbSync - Storage] Salvo! +${newData.length} novos. Total: ${updatedData.length}`);
     return updatedData.length;
 }
 
@@ -71,3 +71,4 @@ export async function clearData() {
     console.log("[UrbSync - Storage] Banco de dados limpo.");
 
 }
+
