@@ -161,8 +161,6 @@ export class AprovaScraper extends BaseScraper {
                 }
             }
         }
-
-        console.log("Caixa Ativa Detectada:", detectedName);
         await chrome.storage.local.set({ caixa_atual: detectedName });
         return detectedName;
     }
@@ -197,3 +195,4 @@ export class AprovaScraper extends BaseScraper {
             }));
     }
 }
+
