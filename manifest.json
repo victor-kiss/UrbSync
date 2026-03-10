@@ -1,9 +1,14 @@
 {
   "manifest_version": 3,
   "name": "UrbSync - Extrator de Processos",
-  "description":"  Automatize a extração de dados do Aprova Digital e SEI. Exporte processos para Excel com um único clique.",
+  "description": "Automatize a extração de dados do Aprova Digital e SEI. Exporte processos para Excel com um único clique.",
   "version": "1.0",
- "permissions": [
+  "icons": {
+    "16": "src/assets/images/icon16.png",
+    "48": "src/assets/images/icon48.png",
+    "128": "src/assets/images/icon128.png"
+  },
+  "permissions": [
     "storage",
     "downloads",
     "activeTab",
@@ -14,7 +19,12 @@
     "https://portaldolicenciamentosp.com.br/*"
   ],
   "action": {
-    "default_popup": "src/popup/index.html"
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "src/assets/images/icon16.png",
+      "48": "src/assets/images/icon48.png",
+      "128": "src/assets/images/icon128.png"
+    }
   },
   "background": {
     "service_worker": "src/content/core/background.js",
